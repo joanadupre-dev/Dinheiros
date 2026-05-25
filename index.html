@@ -372,7 +372,7 @@ function AddWizard({show,onClose,onSave,cats}){
          [PT_DEBIT,'🏦','Débito / PIX','Sai na hora da sua conta',T.blue,T.blueL],
          [PT_ESTIMATED,'📋','Estimado','Valor previsto, confirmo quando pagar',T.orange,T.orangeL],
          [PT_VA,'🍽️','VA (Vale Alimentação)','Sai do saldo do VA',T.yellow,T.yellowL],
-        ].map(([v,ic,lb,sub,col,bg])=>h('button',{key:v,onClick:()=>{f('payType',v);setStep(4);},style:{background:form.payType===v?bg:'#f8fffe',border:`2px solid ${form.payType===v?col:T.border}`,borderRadius:14,padding:'14px',display:'flex',alignItems:'center',gap:14,cursor:'pointer',textAlign:'left'}},
+        ].map(([v,ic,lb,sub,col,bg])=>h('button',{key:v,onClick:()=>{...p,payType:v}));setStep(4)},style:{background:form.payType===v?bg:'#f8fffe',border:`2px solid ${form.payType===v?col:T.border}`,borderRadius:14,padding:'14px',display:'flex',alignItems:'center',gap:14,cursor:'pointer',textAlign:'left'}},
           h('span',{style:{fontSize:24}}),
           h('span',{style:{fontSize:24,flexShrink:0}},ic),
           h('div',null,
