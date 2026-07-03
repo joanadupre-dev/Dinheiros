@@ -44,7 +44,7 @@ const PT_ESTIMATED='estimated'; // estimado, confirma depois
 const PT_VA='va';            // débito VA
 
 // ── storage ───────────────────────────────────────────────────────────────────
-const SK='dinheiros_v121';
+const SK='dinheiros_v123';
 const load=()=>{try{const d=localStorage.getItem(SK);return d?JSON.parse(d):null;}catch(e){return null;}};
 const save=d=>{try{localStorage.setItem(SK,JSON.stringify(d));}catch(e){}};
 
@@ -68,7 +68,7 @@ const DEFAULT_CATS=[
 
 const makeDefaults=()=>({
   salary:"8547", va:"756",
-  balanceDebit:0, balanceVA:752,
+  balanceDebit:3462, balanceVA:752,
   expenses:[
     {"id": "aluguel-rec", "name": "Aluguel", "category": "moradia", "amount": 4150, "type": "recurring", "payType": "estimated", "split": "mine_div", "date": "2026-05-01", "oM": 4, "oY": 2026},
     {"id": "internet-rec", "name": "Internet", "category": "casa", "amount": 120, "type": "recurring", "payType": "estimated", "split": "mine_div", "date": "2026-05-01", "oM": 4, "oY": 2026},
@@ -253,8 +253,8 @@ const makeDefaults=()=>({
   receivables:[{"id": "julia-wellhub", "name": "WellHub Julia Dupre", "amount": 150, "type": "recurring", "note": "Reembolso academia", "oM": 5, "oY": 2026}, {"id": "rcv-222", "name": "Beneflash", "amount": 222, "type": "recurring", "note": "", "oM": 5, "oY": 2026}, {"id": "caio-orian", "name": "Caio (Orian)", "amount": 518, "type": "recurring", "note": "Reembolso joia parcelada", "oM": 5, "oY": 2026, "endM": 9, "endY": 2026}],
   refunds:[{"id": "uro1dgh6", "name": "Pix da Luisa — maio", "amount": 100, "rcvType": "pix_luisa", "isPixLuisa": true, "date": "2026-05-25", "oM": 4, "oY": 2026}, {"id": "631tsie2", "name": "Pix recebido", "amount": 200, "rcvType": "pix_outro", "date": "2026-05-27", "oM": 4, "oY": 2026}, {"id": "484rdcyg", "name": "Pix da Luisa — acerto maio", "amount": 4075, "rcvType": "pix_luisa", "isPixLuisa": true, "date": "2026-05-30", "oM": 4, "oY": 2026}, {"id": "y2v1npay", "name": "Milagre", "amount": 238, "rcvType": "pix_outro", "date": "2026-06-03", "oM": 5, "oY": 2026}, {"id": "t8dt3kb0", "name": "Frete", "amount": 200, "rcvType": "pix_outro", "date": "2026-06-03", "oM": 5, "oY": 2026}, {"isRefund": true, "rcvType": "pix_outro", "id": "wttqvp7h", "name": "Luisa", "amount": 60, "split": "mine", "date": "2026-06-13", "oM": 5, "oY": 2026, "isEstorno": false, "isPixLuisa": false}, {"isRefund": true, "rcvType": "pix_outro", "id": "k8pintx6", "name": "Bet", "amount": 60, "split": "mine", "date": "2026-06-14", "oM": 5, "oY": 2026, "isEstorno": false, "isPixLuisa": false}, {"isRefund": true, "rcvType": "pix_outro", "id": "1zgmyds8", "name": "Gabis", "amount": 66, "split": "mine", "date": "2026-06-14", "oM": 5, "oY": 2026, "isEstorno": false, "isPixLuisa": false}, {"isRefund": true, "rcvType": "pix_outro", "id": "nng0dm8p", "name": "Duda", "amount": 66, "split": "mine", "date": "2026-06-14", "oM": 5, "oY": 2026, "isEstorno": false, "isPixLuisa": false}, {"isRefund": true, "rcvType": "pix_outro", "id": "1sgicrl0", "name": "Nath", "amount": 66, "split": "mine", "date": "2026-06-14", "oM": 5, "oY": 2026, "isEstorno": false, "isPixLuisa": false}, {"isRefund": true, "rcvType": "pix_outro", "id": "frh21azn", "name": "Jujunto", "amount": 66, "split": "mine", "date": "2026-06-14", "oM": 5, "oY": 2026, "isEstorno": false, "isPixLuisa": false}, {"isRefund": true, "rcvType": "pix_outro", "id": "37gjs10u", "name": "Marcella", "amount": 33, "split": "mine", "date": "2026-06-14", "oM": 5, "oY": 2026, "isEstorno": false, "isPixLuisa": false}, {"isRefund": true, "rcvType": "pix_outro", "id": "tmdx1cxo", "name": "Amil", "amount": 68, "split": "mine", "date": "2026-06-22", "oM": 5, "oY": 2026, "isEstorno": false, "isPixLuisa": false}],
   goals:{}, closings:{}, cats:null, closedFaturas:{},
-  confirmedRcv:{"sal:4:2026": {"date": "2026-05-01"}, "va:4:2026": {"date": "2026-05-01"}, "sal:5:2026": {"date": "2026-06-01"}, "va:5:2026": {"date": "2026-06-26"}},
-  payments:{"agua-rec:4:2026": {"date": "2026-05-15", "realAmount": 195}, "antonio-maio-2026:4:2026": {"date": "2026-05-27", "realAmount": 109}, "internet-rec:4:2026": {"date": "2026-05-27", "realAmount": 120}, "aluguel-rec:4:2026": {"date": "2026-05-10", "realAmount": 4115}, "luz-rec:4:2026": {"date": "2026-05-25", "realAmount": 587}, "das-rec:4:2026": {"date": "2026-05-20", "realAmount": 513}, "rifa-jun-2026:5:2026": {"date": "2026-06-01", "realAmount": 10}, "suco-feirda-jun-2026:5:2026": {"date": "2026-06-01", "realAmount": 10}, "bet-jun-2026:5:2026": {"date": "2026-06-11", "realAmount": 40}, "conceicao-rec:4:2026": {"date": "2026-06-12", "realAmount": 220}, "plano-saude-rec:4:2026": {"date": "2026-06-14", "realAmount": 635}, "z83l9to8:5:2026": {"date": "2026-06-17", "realAmount": 30}, "pdmjtrhy:4:2026": {"date": "2026-06-17", "realAmount": 40}, "dasn-rec:4:2026": {"date": "2026-06-18", "realAmount": 355}, "inss-rec:4:2026": {"date": "2026-06-18", "realAmount": 180}, "aqvhx0v1:5:2026": {"date": "2026-06-20", "realAmount": 12}, "5yfi926g:5:2026": {"date": "2026-06-25", "realAmount": 10}, "5pigwbyz:5:2026": {"date": "2026-06-25", "realAmount": 28}, "rcv:rcv-222:5:2026": {"date": "2026-06-26", "amount": 222}},
+  confirmedRcv:{"sal:4:2026": {"date": "2026-05-01"}, "va:4:2026": {"date": "2026-05-01"}, "sal:5:2026": {"date": "2026-07-03"}, "va:5:2026": {"date": "2026-06-26"}},
+  payments:{"agua-rec:4:2026": {"date": "2026-05-15", "realAmount": 195}, "antonio-maio-2026:4:2026": {"date": "2026-05-27", "realAmount": 109}, "internet-rec:4:2026": {"date": "2026-05-27", "realAmount": 120}, "aluguel-rec:4:2026": {"date": "2026-05-10", "realAmount": 4115}, "luz-rec:4:2026": {"date": "2026-05-25", "realAmount": 587}, "das-rec:4:2026": {"date": "2026-05-20", "realAmount": 513}, "rifa-jun-2026:5:2026": {"date": "2026-06-01", "realAmount": 10}, "suco-feirda-jun-2026:5:2026": {"date": "2026-06-01", "realAmount": 10}, "bet-jun-2026:5:2026": {"date": "2026-06-11", "realAmount": 40}, "conceicao-rec:4:2026": {"date": "2026-06-12", "realAmount": 220}, "plano-saude-rec:4:2026": {"date": "2026-06-14", "realAmount": 635}, "z83l9to8:5:2026": {"date": "2026-06-17", "realAmount": 30}, "pdmjtrhy:4:2026": {"date": "2026-06-17", "realAmount": 40}, "dasn-rec:4:2026": {"date": "2026-06-18", "realAmount": 355}, "inss-rec:4:2026": {"date": "2026-06-18", "realAmount": 180}, "aqvhx0v1:5:2026": {"date": "2026-06-20", "realAmount": 12}, "5yfi926g:5:2026": {"date": "2026-06-25", "realAmount": 10}, "5pigwbyz:5:2026": {"date": "2026-06-25", "realAmount": 28}, "rcv:rcv-222:5:2026": {"date": "2026-06-26", "amount": 222}, "rcv:julia-wellhub:5:2026": {"date": "2026-07-02", "amount": 150}, "aluguel-rec:5:2026": {"date": "2026-07-03", "realAmount": 4115}, "emprestimo-rec:5:2026": {"date": "2026-07-03", "realAmount": 536}, "luz-rec:5:2026": {"date": "2026-07-03", "realAmount": 464}, "internet-rec:5:2026": {"date": "2026-07-03", "realAmount": 120}},
   faturaPayments:{"4:2026": {"total": 7254, "items": [{"name": "C6", "value": 7254}], "date": "2026-06-01"}},
 });
 
@@ -823,8 +823,10 @@ function App(){
   const isMesAtual=(selM===DM&&selY===DY);
   // SALDO PREVISTO: salário + recebíveis + casinha − fatura que falta − estimados
   const faturaFalta=Math.max(0,faturaTotal-faturaJaPaga);
-  const nextGap=salN+pendingRcvTotal+casinhaNetPendente-faturaFalta-unpaidEstimatedTotal;
-  const nextAvail=salN+pendingRcvTotal+casinhaNetPendente;
+  // Base: se salário já foi confirmado, ele está na conta (usa saldo real); senão, projeta o salário
+  const baseSaldo=isSalaryConfirmed?balDebit:salN;
+  const nextGap=baseSaldo+pendingRcvTotal+casinhaNetPendente-faturaFalta-unpaidEstimatedTotal;
+  const nextAvail=baseSaldo+pendingRcvTotal+casinhaNetPendente;
   const nextTotal=(mesEncerrado?faturaTotal:faturaFalta)+unpaidEstimatedTotal;
 
   const byCategory=useMemo(()=>{
